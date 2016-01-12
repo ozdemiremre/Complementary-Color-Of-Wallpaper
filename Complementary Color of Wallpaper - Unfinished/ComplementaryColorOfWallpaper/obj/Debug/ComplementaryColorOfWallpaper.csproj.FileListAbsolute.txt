@@ -1,0 +1,9 @@
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\bin\Debug\ComplementaryColorOfWallpaper.exe.config
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\bin\Debug\ComplementaryColorOfWallpaper.exe
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\bin\Debug\ComplementaryColorOfWallpaper.pdb
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\obj\Debug\ComplementaryColorOfWallpaper.csprojResolveAssemblyReference.cache
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\obj\Debug\WindowsFormsApplication9.Form1.resources
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\obj\Debug\ComplementaryColorOfWallpaper.Properties.Resources.resources
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\obj\Debug\ComplementaryColorOfWallpaper.csproj.GenerateResource.Cache
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\obj\Debug\ComplementaryColorOfWallpaper.exe
+C:\Users\Emre Ozdemir\Desktop\Documents\Git Projects\Complementary-Color-Of-Wallpaper\Complementary Color of Wallpaper - Unfinished\ComplementaryColorOfWallpaper\obj\Debug\ComplementaryColorOfWallpaper.pdb

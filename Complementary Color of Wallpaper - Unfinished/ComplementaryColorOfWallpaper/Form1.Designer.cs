@@ -33,6 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.colorButton = new System.Windows.Forms.Button();
+            this.compButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -48,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(22, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 1;
@@ -57,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 13);
+            this.label2.Location = new System.Drawing.Point(124, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(10, 13);
             this.label2.TabIndex = 2;
@@ -66,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 30);
+            this.label3.Location = new System.Drawing.Point(22, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 13);
             this.label3.TabIndex = 3;
@@ -75,17 +77,37 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 30);
+            this.label4.Location = new System.Drawing.Point(133, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(10, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "-";
             // 
+            // colorButton
+            // 
+            this.colorButton.Enabled = false;
+            this.colorButton.Location = new System.Drawing.Point(1, 12);
+            this.colorButton.Name = "colorButton";
+            this.colorButton.Size = new System.Drawing.Size(15, 13);
+            this.colorButton.TabIndex = 5;
+            this.colorButton.UseVisualStyleBackColor = true;
+            // 
+            // compButton
+            // 
+            this.compButton.Enabled = false;
+            this.compButton.Location = new System.Drawing.Point(1, 31);
+            this.compButton.Name = "compButton";
+            this.compButton.Size = new System.Drawing.Size(15, 13);
+            this.compButton.TabIndex = 6;
+            this.compButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 89);
+            this.ClientSize = new System.Drawing.Size(302, 89);
+            this.Controls.Add(this.compButton);
+            this.Controls.Add(this.colorButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -105,6 +127,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button colorButton;
+        private System.Windows.Forms.Button compButton;
     }
 }
 
