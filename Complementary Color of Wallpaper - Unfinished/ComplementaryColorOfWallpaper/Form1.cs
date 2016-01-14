@@ -79,7 +79,7 @@ namespace WindowsFormsApplication9
             return Color.FromArgb(r, g, b);
         }
 
-        public static HSL RGBToHSL(Color RGB)  //Seems like it should be working. But need to be sure.
+        public static HSL RGBToHSL(Color RGB)  //RGBToHSL is working fine, as intended.
         {
             HSL localHSL = new HSL();
             
@@ -130,7 +130,7 @@ namespace WindowsFormsApplication9
                 return localHSL;
         }
 
-        public HSL calculateTheOppositeHue(HSL normalHSL)
+        public HSL calculateTheOppositeHue(HSL normalHSL) //This piece of code is working fine, as intended.
         {
             HSL newHue = normalHSL;
 
@@ -167,7 +167,7 @@ namespace WindowsFormsApplication9
                 G = 255.0d * HueToRGB(var_1, var_2, hsl.H);
                 B = 255.0d * HueToRGB(var_1, var_2, hsl.H - (1.0d / 3.0d));
             }
-            Color cl = Color.FromArgb(Convert.ToInt32(R), Convert.ToInt32(B), Convert.ToInt32(G));
+            Color cl = Color.FromArgb(Convert.ToInt32(R), Convert.ToInt32(G), Convert.ToInt32(B));
 
             return cl;
         }
