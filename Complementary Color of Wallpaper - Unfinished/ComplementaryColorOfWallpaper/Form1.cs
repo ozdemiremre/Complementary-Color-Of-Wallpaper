@@ -79,65 +79,68 @@ namespace WindowsFormsApplication9
             return Color.FromArgb(r, g, b);
         }
 
-        public static HSL RGBToHSL(Color RGB)
+        public static HSL RGBToHSL(Color RGB)  //Seems like it should be working. But need to be sure.
         {
             HSL localHSL = new HSL();
             
-            double varR = Convert.ToDouble(RGB.R) / 255.0;
-            double varG = Convert.ToDouble(RGB.G) / 255.0;
-            double varB = Convert.ToDouble(RGB.B) / 255.0;
+            double varR = Convert.ToDouble(RGB.R) / 255.0d;
+            double varG = Convert.ToDouble(RGB.G) / 255.0d;
+            double varB = Convert.ToDouble(RGB.B) / 255.0d;
 
             double minVal = Math.Min(Math.Min(varR, varG), varB);//Min. value of RGB
             double maxVal = Math.Max(Math.Max(varR, varG), varB);//Max. value of RGB
             double maxDel = maxVal - minVal;//Delta RGB value
 
-            localHSL.L = (maxVal + minVal) / 2.0;
+            localHSL.L = (maxVal + minVal) / 2.0d;
 
-            if (maxDel == 0.0)                     //This is a gray, no chroma...
+            if (maxDel == 0.0d)                     //This is a gray, no chroma...
             {
-                localHSL.H = 0.0;                  //HSL results from 0 to 1
-                localHSL.S = 0.0;
+                localHSL.H = 0.0d;                  //HSL results from 0 to 1
+                localHSL.S = 0.0d;
             }
             else                                    //Chromatic data...
             {
-                if (localHSL.L < 0.5)
+                if (localHSL.L < 0.5d)
                     localHSL.S = maxDel / (maxVal + minVal);
                 else
-                    localHSL.S = maxDel / (2.0 - maxVal - minVal);
+                    localHSL.S = maxDel / (2.0d - maxVal - minVal);
 
 
-                double delR = (((maxVal - varR) / 6.0) + (maxDel / 2.0)) / maxDel;
-                double delG = (((maxVal - varG) / 6.0) + (maxDel / 2.0)) / maxDel;
-                double delB = (((maxVal - varB) / 6.0) + (maxDel / 2.0)) / maxDel;
-
+                double delR = (((maxVal - varR) / 6.0d) + (maxDel / 2.0d)) / maxDel;
+                double delG = (((maxVal - varG) / 6.0d) + (maxDel / 2.0d)) / maxDel;
+                double delB = (((maxVal - varB) / 6.0d) + (maxDel / 2.0d)) / maxDel;
 
                 if (varR == maxVal)
                     localHSL.H = delB - delG;
                 else if (varG == maxVal)
-                    localHSL.H = (1.0 / 3.0) + delR - delB;
+                    localHSL.H = (1.0d / 3.0d) + delR - delB;
                 else if (varB == maxVal)
-                    localHSL.H = (2.0 / 3.0) + delG - delR;
+                    localHSL.H = (2.0d / 3.0d) + delG - delR;
 
 
-                if (localHSL.H < 0.0)
-                    localHSL.H += 1.0;
-                if (localHSL.H > 1.0)
-                    localHSL.H -= 1.0;
+                if (localHSL.H < 0.0d)  //Getting Hue between 0 and 1.
+                    localHSL.H += 1.0d;
+                if (localHSL.H > 1.0d)
+                    localHSL.H -= 1.0d;
+
             }
 
-            return localHSL;
+               
+
+                return localHSL;
         }
 
         public HSL calculateTheOppositeHue(HSL normalHSL)
         {
             HSL newHue = normalHSL;
 
-            newHue.H = (newHue.H + 0.5) % 1.0;
+            newHue.H = (newHue.H + 0.5d) % 1.0d;
 
             return newHue;
         }
-        public Color HSLToRGB(HSL hsl)
-        {
+
+        public Color HSLToRGB(HSL hsl) //Problem is in here ||
+        {                                                      //                                 V
             double R;
             double B;
             double G;
@@ -145,42 +148,42 @@ namespace WindowsFormsApplication9
             double var_1;
             double var_2;
 
-            if (hsl.S == 0.0)                       //HSL from 0 to 1
+            if (hsl.S == 0.0d)                       //HSL from 0 to 1
             {
-                R = hsl.L * 255.0;                      //RGB results from 0 to 255
-                G = hsl.L * 255.0;
-                B = hsl.L * 255.0;
+                R = hsl.L * 255.0d;                      //RGB results from 0 to 255
+                G = hsl.L * 255.0d;
+                B = hsl.L * 255.0d;
             }
             else
             {
-                if (hsl.L < 0.5)
-                    var_2 = hsl.L * (1 + hsl.S);
+                if (hsl.L < 0.5d)
+                    var_2 = hsl.L * (1.0d + hsl.S);
                 else
                     var_2 = (hsl.L + hsl.S) - (hsl.S * hsl.L);
 
-                var_1 = 2.0 * hsl.L - var_2;
+                var_1 = 2.0d * hsl.L - var_2;
 
-                R = 255.0 * HueToRGB(var_1, var_2, hsl.H + (1.0 / 3.0));
-                G = 255.0 * HueToRGB(var_1, var_2, hsl.H);
-                B = 255.0 * HueToRGB(var_1, var_2, hsl.H - (1.0 / 3.0));
+                R = 255.0d * HueToRGB(var_1, var_2, hsl.H + (1.0d / 3.0d));
+                G = 255.0d * HueToRGB(var_1, var_2, hsl.H);
+                B = 255.0d * HueToRGB(var_1, var_2, hsl.H - (1.0d / 3.0d));
             }
             Color cl = Color.FromArgb(Convert.ToInt32(R), Convert.ToInt32(B), Convert.ToInt32(G));
 
             return cl;
         }
 
-        public double HueToRGB(double v1, double v2, double vH)
+        public double HueToRGB(double v1, double v2, double vH) //Don't think any problems here.
         {
-            if (vH < 0.0)
-                vH += 1.0;
-            if (vH > 1.0)
-                vH -= 1.0;
-            if ((6.0 * vH) < 1.0)
-                return (v1 + (v2 - v1) * 6.0 * vH);
-            if ((2.0 * vH) < 1.0)
+            if (vH < 0.0d)      
+                vH += 1.0d;
+            if (vH > 1.0d)
+                vH -= 1.0d;   //Getting hue back in between 0 and 1.
+            if ((6.0d * vH) < 1.0d)
+                return (v1 + (v2 - v1) * 6.0d * vH);
+            if ((2.0d * vH) < 1.0d)
                 return (v2);
-            if ((3.0 * vH) < 2.0)
-                return (v1 + (v2 - v1) * ((2.0 / 3.0) - vH) * 6.0);
+            if ((3.0d * vH) < 2.0d)
+                return (v1 + (v2 - v1) * ((2.0d / 3.0d) - vH) * 6.0d);
             return (v1);
         }
     }
