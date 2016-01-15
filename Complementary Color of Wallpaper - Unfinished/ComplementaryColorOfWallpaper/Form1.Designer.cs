@@ -30,9 +30,9 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelAVGLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelCompColor = new System.Windows.Forms.Label();
             this.colorButton = new System.Windows.Forms.Button();
             this.compButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -56,14 +56,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Desktop AVG Color :";
             // 
-            // label2
+            // labelAVGLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "-";
+            this.labelAVGLabel.AutoSize = true;
+            this.labelAVGLabel.Location = new System.Drawing.Point(124, 12);
+            this.labelAVGLabel.Name = "labelAVGLabel";
+            this.labelAVGLabel.Size = new System.Drawing.Size(10, 13);
+            this.labelAVGLabel.TabIndex = 2;
+            this.labelAVGLabel.Text = "-";
             // 
             // label3
             // 
@@ -74,14 +74,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Complementary Color :";
             // 
-            // label4
+            // labelCompColor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(133, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(10, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "-";
+            this.labelCompColor.AutoSize = true;
+            this.labelCompColor.Location = new System.Drawing.Point(133, 29);
+            this.labelCompColor.Name = "labelCompColor";
+            this.labelCompColor.Size = new System.Drawing.Size(10, 13);
+            this.labelCompColor.TabIndex = 4;
+            this.labelCompColor.Text = "-";
             // 
             // colorButton
             // 
@@ -108,9 +108,9 @@
             this.ClientSize = new System.Drawing.Size(302, 89);
             this.Controls.Add(this.compButton);
             this.Controls.Add(this.colorButton);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelCompColor);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelAVGLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
@@ -124,9 +124,9 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAVGLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelCompColor;
         private System.Windows.Forms.Button colorButton;
         private System.Windows.Forms.Button compButton;
     }

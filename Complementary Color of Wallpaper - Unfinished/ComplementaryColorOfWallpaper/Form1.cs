@@ -27,9 +27,7 @@ namespace WindowsFormsApplication9
 
             System.Drawing.Bitmap btm = new System.Drawing.Bitmap(WallpaperPth); //Creating a new bitmap for the wallpaper.
 
-            label2.Text = getDominantColor(btm).ToString(); //Get the AVG color and display it.
-
-
+            labelAVGLabel.Text = getDominantColor(btm).ToString(); //Get the AVG color and display it.
 
             averageColor = getDominantColor(btm);
 
@@ -46,18 +44,19 @@ namespace WindowsFormsApplication9
 
             compButton.BackColor = compColor;
             compButton.ForeColor = compColor;
-            label4.Text = compColor.ToString();
+            labelCompColor.Text = compColor.ToString();
+            labelCompColor.Text = compColor.ToKnownColor().ToString();
             
         }
 
         public static Color getDominantColor(Bitmap bmp)
         {
             //Used for tally
-            int r = 0;
-            int g = 0;
-            int b = 0;
+            long r = 0;
+            long g = 0;
+            long b = 0;
 
-            int total = 0;
+            long total = 0;
 
             for (int x = 0; x < bmp.Width; x++)
             {
@@ -76,7 +75,7 @@ namespace WindowsFormsApplication9
             g /= total;
             b /= total;
 
-            return Color.FromArgb(r, g, b);
+            return Color.FromArgb(Convert.ToInt32(r), Convert.ToInt32(g), Convert.ToInt32(b));
         }
 
         public static HSL RGBToHSL(Color RGB)  //RGBToHSL is working fine, as intended.
@@ -139,8 +138,8 @@ namespace WindowsFormsApplication9
             return newHue;
         }
 
-        public Color HSLToRGB(HSL hsl) //Problem is in here ||
-        {                                                      //                                 V
+        public Color HSLToRGB(HSL hsl) //HSLToRGB working as intended.
+        {                                                     
             double R;
             double B;
             double G;
