@@ -45,7 +45,6 @@ namespace WindowsFormsApplication9
             compButton.BackColor = compColor;
             compButton.ForeColor = compColor;
             labelCompColor.Text = compColor.ToString();
-            labelCompColor.Text = compColor.ToKnownColor().ToString();
             
         }
 
